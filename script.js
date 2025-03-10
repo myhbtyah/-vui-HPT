@@ -138,7 +138,7 @@ function checkAnswer(selected) {
         setTimeout(showGiftScreen, 2000);
     } else {
         sounds.ohNo.play();
-        resultMessage.innerHTML = `<span style="color:red;">😢 Sai rồi! Đáp án đúng là ${correctAnswer}</span>`;
+        resultMessage.innerHTML = `<span style="color:red;">😢 Thật tiếc quá! Đáp án đúng là ${correctAnswer}</span>`;
         setTimeout(() => document.getElementById("continue").style.display = "inline", 2000);
     }
 }

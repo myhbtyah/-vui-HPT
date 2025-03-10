@@ -94,7 +94,7 @@
 
         /* Đồng hồ đếm ngược */
         #timer {
-            font-size: 4vw;
+            font-size: 3vw;
             color: red;
             font-weight: bold;
             animation: blink 1s infinite alternate;
@@ -112,6 +112,7 @@
         /* Nút tiếp tục */
         button {
             font-size: 2vw;
+			color: blue;
             padding: 1vh;
             margin-top: 2vh;
             cursor: pointer;
@@ -122,7 +123,7 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 1vw;
+            gap: 2vw;
         }
 
         .gift-box {
@@ -172,7 +173,7 @@
 <body>
     <div id="quiz-container" class="container">
         <h2 id="company-title">Công ty Cổ Phần Dệt Hạnh Phúc</h2>
-        <h1 id="main-title">Đố Vui Có Thưởng</h1>
+        <h1 id="main-title">Đố Vui Có Thưởng HPT </h1>
         <div id="question"></div>
         <div id="options"></div>
         <div id="timer">Thời gian: 30s</div>
@@ -183,7 +184,7 @@
     </div>
 
     <div id="gift-container" class="container">
-        <h1>Chọn Hộp Quà</h1>
+        <h1>Chúc mừng đã chọn đáp án đúng, Mời chọn quà: </h1>
         <div id="gifts"></div>
         <div id="result"></div>
         <button id="backToQuiz">Chơi tiếp</button>
