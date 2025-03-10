@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đố Vui Có Thưởng</title>
+    <style>
+        /* Đảm bảo toàn bộ trang full màn hình */
+        /* Căn lề trên thay vì căn giữa */
+        html, body {
+          height: 100%;
+          width: 100%;
+          margin: 0;
+          padding: 0;
+          font-family: Arial, sans-serif;
+          text-align: center;
+          background-color: #f0f0f0;
+         display: flex;
+         justify-content: center;
+        align-items: flex-start; /* Căn lề trên */
+     }
+
+
+       /* Container chính, co giãn theo màn hình */
+        .container {
+            width: 80vw;  /* 80% chiều rộng màn hình */
+            height: 100vh; /* 90% chiều cao màn hình */
+            max-width: 1200px; /* Giới hạn tối đa */
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            padding: 2%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Tiêu đề công ty */
+        #company-title {
+            font-size: 3vw; /* Co giãn theo màn hình */
+            color: #004080;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 1vh;
+        }
+
+        /* Tiêu đề chính */
+        #main-title {
+            font-size: 4vw;
+            color: #ff4500;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 2vh;
+        }
+
+        /* Câu hỏi */
+        #question {
+            font-size: 3vw;
+            color: blue;
+            background-color: yellow;
+            padding: 2vh;
+            border-radius: 10px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        /* Khu vực câu trả lời */
+        #options {
+            display: flex;
+            flex-direction: column;
+            gap: 1vh;
+            align-items: center;
+        }
+
+        #options button {
+            font-size: 2vw;
+            padding: 1.5vh;
+            width: 60%;
+            border: 3px solid black;
+            cursor: pointer;
+            transition: 0.3s;
+            color: white;
+        }
+
+        #options button:hover {
+            opacity: 0.8;
+        }
+
+        /* Màu sắc từng nút */
+        #options button:nth-child(1) { background-color: red; }
+        #options button:nth-child(2) { background-color: blue; }
+        #options button:nth-child(3) { background-color: green; }
+        #options button:nth-child(4) { background-color: orange; }
+
+        /* Đồng hồ đếm ngược */
+        #timer {
+            font-size: 4vw;
+            color: red;
+            font-weight: bold;
+            animation: blink 1s infinite alternate;
+        }
+
+        @keyframes blink {
+            from { opacity: 1; }
+            to { opacity: 0.3; }
+        }
+		@keyframes fireworks {
+        0% { background-color: rgba(255, 223, 0, 0.3); }
+        100% { background-color: rgba(255, 223, 0, 0.7); }
+        }
+
+        /* Nút tiếp tục */
+        button {
+            font-size: 2vw;
+            padding: 1vh;
+            margin-top: 2vh;
+            cursor: pointer;
+        }
+
+        /* Giao diện chọn quà */
+        #gifts {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1vw;
+        }
+
+        .gift-box {
+           width: 100px;
+           height: 100px;
+           background: none;
+           cursor: pointer;
+           transition: transform 0.3s;
+        }
+
+       .gift-box img {
+           width: 100%;
+           height: auto;
+        }
+       @keyframes shake {
+          0%, 100% { transform: translateX(0); }
+          25% { transform: translateX(-5px); }
+          50% { transform: translateX(5px); }
+          75% { transform: translateX(-5px); }
+        }
+
+.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes fireworks {
+    0% { background: rgba(255, 215, 0, 0.3); }
+    100% { background: rgba(255, 215, 0, 0.7); }
+}
+
+
+        .gift-box:hover {
+            transform: scale(1.1);
+        }
+
+        /* Ẩn các phần chưa cần hiển thị */
+        #gift-container {
+            display: none;
+        }
+#continue {
+    display: block;
+    margin: 10px auto;
+}
+
+    </style>
+</head>
+<body>
+    <div id="quiz-container" class="container">
+        <h2 id="company-title">Công ty Cổ Phần Dệt Hạnh Phúc</h2>
+        <h1 id="main-title">Đố Vui Có Thưởng</h1>
+        <div id="question"></div>
+        <div id="options"></div>
+        <div id="timer">Thời gian: 30s</div>
+        <div id="result-message"></div>
+        <button id="restart" style="display:none;">Làm lại</button>
+        <button id="next" style="display:none;">Qua lượt</button>
+        <button id="continue" style="display:none;">Chơi tiếp</button>
+    </div>
+
+    <div id="gift-container" class="container">
+        <h1>Chọn Hộp Quà</h1>
+        <div id="gifts"></div>
+        <div id="result"></div>
+        <button id="backToQuiz">Chơi tiếp</button>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
